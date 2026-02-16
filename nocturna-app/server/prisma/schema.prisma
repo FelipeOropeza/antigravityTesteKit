@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model MenuItem {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  category    String   @default("main")
+  imageUrl    String?
+  isSignature Boolean  @default(false)
+}
+
+model Reservation {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String?
+  date      DateTime
+  guests    Int
+  status    String   @default("pending") // pending, confirmed, cancelled
+  createdAt DateTime @default(now())
+}

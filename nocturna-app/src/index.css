@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0a0a0a;
+  --color-bg-darker: #050505;
+  --color-text-primary: #e0e0e0;
+  --color-text-muted: #888888;
+  --color-accent-gold: #c5a059;
+  --color-accent-amber: #d35400;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+
+  --font-heading: "Cinzel", serif;
+  --font-body: "Manrope", sans-serif;
+
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+  }
+}
